@@ -1,1 +1,1 @@
-module.exports.signupRouter = require('./signup')
+module.exports.authRouter = require('./auth')

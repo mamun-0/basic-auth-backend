@@ -5,12 +5,12 @@ const app = express();
 const db = require("./models");
 
 // Routers
-const { signupRouter } = require("./routes");
+const { authRouter } = require("./routes");
 // middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use("/api/auth", signupRouter);
+app.use("/api/auth", authRouter);
 
 // ------Error Handling------
 
