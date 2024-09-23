@@ -1,7 +1,10 @@
 const express = require("express");
+const app = express();
 const wrapAsync = require("./Utils/Error/wrapAsync");
 const CustomError = require("./Utils/Error/CustomError");
-const app = express();
+
+// Database connection
+const db = require("./models");
 
 // middlewares
 app.use(express.json());
