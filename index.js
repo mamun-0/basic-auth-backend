@@ -1,21 +1,16 @@
 const express = require("express");
 const app = express();
-const wrapAsync = require("./Utils/Error/wrapAsync");
-const CustomError = require("./Utils/Error/CustomError");
 
 // Database connection
 const db = require("./models");
 
+// Routers
+const { signupRouter } = require("./routes");
 // middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get(
-  "/",
-  wrapAsync(async (req, res, next) => {
-    throw new CustomError("Not handle", 521);
-  })
-);
+app.use("/api/auth", signupRouter);
 
 // ------Error Handling------
 
